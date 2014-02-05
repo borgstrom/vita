@@ -40,7 +40,7 @@
 	\newcommand{\name}[1]{\def \@name{#1}}
 	\newcommand{\telephone}[1]{\def \@telephone{#1}}
 	\newcommand{\location}[1]{\def \@location{#1}}
-	\newcommand{\email}[1]{\def \@youremail{#1}}
+	\newcommand{\email}[1]{\def \@email{#1}}
 	\newcommand{\http}[1]{\def \@http{#1}}
 	\newcommand{\statement}[1]{\def \@statement{#1}}
 
@@ -70,6 +70,14 @@
 
 % set some default lengths
 \setlength{\parindent}{18pt}
+
+% email links
+\providecommand*\emaillink[1]{\nolinkurl{#1}}
+\providecommand*\mailto[1]{\href{mailto:#1}{\emaillink{#1}}}
+
+% use & style urls
+\usepackage{url}
+\urlstyle{same}
 
 % some custom font styling
 \makeatletter
@@ -106,10 +114,10 @@
 	\end{minipage}
 	\begin{minipage}{0.5\textwidth}
 		\begin{flushright}
-			\ifdefempty{\@location}{\relax}{\hfill\small\@location}
-			\ifdefempty{\@email}{\relax}{l\small\@youremail\\}
+            \ifdefempty{\@email}{\relax}{\small\mailto{\@email}\\}
 			\ifdefempty{\@http}{\relax}{\small\url{\@http}\\}
-			\ifdefempty{\@telephone}{\relax}{\small\@telephone}
+			\ifdefempty{\@telephone}{\relax}{\small\@telephone\\}
+			\ifdefempty{\@location}{\relax}{\hfill\small\@location}
 		\end{flushright}
 	\end{minipage}
 	
