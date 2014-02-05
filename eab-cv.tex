@@ -1,0 +1,116 @@
+%
+% Evan Borgstrom's CV
+% http://borgstrom.ca/
+% evan@borgstrom.ca
+%
+% Inspiration drawn from Ted Pavlic's:
+% http://links.tedpavlic.com/ascii/tpavlic_cv_engineering_tex.ascii
+%
+
+% base our document on the article class
+% 11pt base size
+\documentclass[11pt]{article}
+
+% use the Quattrocento Sans font
+% http://www.tug.dk/FontCatalogue/quattrocentosans/
+\usepackage[sfdefault]{quattrocento}
+\usepackage[T1]{fontenc}
+
+% math
+\usepackage{calc}
+
+% use fancy headers & last page
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% use enumerable list items
+\usepackage[shortlabels]{enumitem}
+
+% letter paper with non default margins
+\usepackage[
+    paper=letterpaper,
+    marginparwidth=1.2in, % section titles
+    marginparsep=.05in, % between titles & text
+    margin=1in, % page margins
+]{geometry}
+
+% no paragraph indenting, 1 and 2/3 lines between paragraphs
+\setlength{\parindent}{0in}
+\setlength{\parskip}{1.666ex}
+
+% fancy pages
+\pagestyle{fancy}
+
+% pdf bookmarks & hyperlinks
+\usepackage{color,hyperref}
+\hypersetup{
+    breaklinks,
+    colorlinks,
+    linkcolor=black,
+    urlcolor=black,
+    anchorcolor=black,
+    citecolor=black
+}
+
+
+% Provides a linked \url{#1} that doesn't require escape characters
+\usepackage{url}
+
+% You can adjust the style \url{} uses here:
+% (options are: same, rm, sf, tt; defaults to tt)
+\urlstyle{same}
+
+% For \email{ADDRESS}, links ADDRESS to the url mailto:ADDRESS
+% (uncomment to typeset the e\-/mail address in typewriter font;
+%  otherwise, will be typeset in the \urlstyle above)
+%\DeclareUrlCommand\emaillink{\urlstyle{tt}}
+\providecommand*\emaillink[1]{\nolinkurl{#1}}
+\providecommand*\email[1]{\href{mailto:#1}{\emaillink{#1}}}
+
+\fancyhf{}
+
+% default header and footer
+\lhead{}
+\chead{}
+\rhead{}
+
+\lfoot{\footnotesize Evan Borgstrom}
+\cfoot{
+    \footnotesize \email{evan@borgstrom.ca} \\
+    \footnotesize +1 (416) 230-7170
+}
+\rfoot{\footnotesize Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{1pt}
+
+% first page header and footer
+\fancypagestyle{first}{
+    \lhead{\Huge Evan Borgstrom}
+    \chead{}
+    \rhead{\emph{Curriculum vitae}}
+
+    % footer
+    \lfoot{}
+    \cfoot{\footnotesize Page \thepage\ of \pageref{LastPage}}
+    \rfoot{}
+
+    \renewcommand{\headrulewidth}{2pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% set the default page style
+\pagestyle{fancy}
+
+\begin{document}
+
+% this can be used to debug the page layout
+%\layout{}
+%\newpage
+
+% use our first page style for our first page
+\thispagestyle{first}
+
+\end{document}
+
+% vim: set ft=tex ts=4 sw=4 sws=4 et :
