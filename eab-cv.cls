@@ -123,7 +123,7 @@
 	
 	% add a closing rule
 	\vspace{0.5cm}
-	\noindent\rule{\textwidth}{0.2mm}
+	\noindent\rule{\textwidth}{0.4pt}
 	
 	% draw recent history if there is any
 	\ifdefempty{\@statement}{\relax}{%
@@ -131,7 +131,7 @@
 		\@statement\\
 
 		% add a closing rule
-		\noindent\rule{\textwidth}{0.1pt}
+		\noindent\rule{\textwidth}{0.4pt}
 	}
 	\vspace{-1cm}
 }
