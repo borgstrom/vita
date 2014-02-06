@@ -69,7 +69,7 @@
 \usepackage[T1]{fontenc}
 
 % set some default lengths
-\setlength{\parindent}{18pt}
+\setlength{\parindent}{0in}
 
 % email links
 \providecommand*\emaillink[1]{\nolinkurl{#1}}
@@ -90,7 +90,7 @@
 	
 	% for sub headings
 	\newenvironment{subheader}{\color{darkgrey} \large}{\par}
-	\newcommand{\addsubheader}[1]{\begin{subheader}#1\end{subheader}}
+    \newcommand{\addsubheader}[1]{\begin{subheader}#1\vspace{0.02in}\end{subheader}}
 
 	% for bold callouts
 	\newenvironment{callout}{\color{darkgrey} \large}{}
@@ -128,10 +128,10 @@
 	% draw recent history if there is any
 	\ifdefempty{\@statement}{\relax}{%
 		\vspace{7mm}
-		\noindent\@statement\\
+		\@statement\\
 
 		% add a closing rule
-		\noindent\rule{\textwidth}{0.2mm}
+		\noindent\rule{\textwidth}{0.1pt}
 	}
 	\vspace{-1cm}
 }
