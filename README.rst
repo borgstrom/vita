@@ -1,9 +1,11 @@
 Evan Borgstrom's CV
 ===================
 
-I use TeXLive via MacPorts::
+Install `BasicTeX`_.
 
-    sudo port install texlive texlive-fonts-extra texlive-latex-extra
+Install required CTAN components::
+
+    sudo tlmgr install nopageno framed quattrocento fontaxes
 
 Then you can use ``pdflatex`` to compile::
 
@@ -16,4 +18,5 @@ of the margins, added better hyperlink support and a bunch of other small
 tweaks. Like the original my ``.cls`` file is released into the public domain,
 feel free to use it for your own CV.
 
+.. _BasicTeX: https://www.tug.org/mactex/morepackages.html
 .. _harnon-cv.cls: http://www.ctan.org/tex-archive/macros/latex/contrib/harnon-cv
