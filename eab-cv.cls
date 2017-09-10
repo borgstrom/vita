@@ -39,7 +39,7 @@
 	\def\FrameCommand{\color{verylightgrey}\vrule width 1pt \hspace{10pt}\color{black}}%
 	\MakeFramed {\advance\hsize-\width \FrameRestore}}%
 {\endMakeFramed}
- 
+
 % package for tables
 \usepackage{tabularx}
 
@@ -137,7 +137,6 @@
 
 % timeline
 \makeatletter
-
 	% recent summary listing in the form of a timeline - takes 2 arguments
 	%   - First is the 'year' or date you want to apply
 	%   - Second is the comments against that date
