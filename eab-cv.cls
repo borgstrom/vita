@@ -16,6 +16,14 @@
 % margins
 \usepackage[top=0.75in,bottom=0.75in,left=0.75in,right=0.75in]{geometry}
 
+% set some default lengths
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0in}
+
+% fonts
+\usepackage[sfdefault]{quattrocento}
+\usepackage[T1]{fontenc}
+
 % turn off all page styling
 \pagestyle{plain}
 \usepackage{nopageno}
@@ -64,13 +72,6 @@
 \definecolor{lightgrey}{rgb}{0.5,0.5,0.5}
 \definecolor{darkgrey}{rgb}{0.3,0.3,0.3}
 
-% fonts
-\usepackage[sfdefault]{quattrocento}
-\usepackage[T1]{fontenc}
-
-% set some default lengths
-\setlength{\parindent}{0in}
-
 % email links
 \providecommand*\emaillink[1]{\nolinkurl{#1}}
 \providecommand*\mailto[1]{\href{mailto:#1}{\emaillink{#1}}}
@@ -85,12 +86,12 @@
 	\newcommand{\adddocumentheader}[1]{{\huge \textsc{#1}}}
 
 	% for section headers
-	\newenvironment{sectionheader}{\vspace{1.2cm} \color{darkgrey} \LARGE \noindent}{\par\vspace{3mm}}
+	\newenvironment{sectionheader}{\color{darkgrey} \LARGE \noindent}{\par}
 	\newcommand{\addheadertext}[1]{\begin{sectionheader}#1\end{sectionheader}}
 	
 	% for sub headings
-	\newenvironment{subheader}{\color{darkgrey} \large}{\par}
-    \newcommand{\addsubheader}[1]{\begin{subheader}#1\vspace{0.02in}\end{subheader}}
+    \newenvironment{subheader}{\color{darkgrey} \large}{\par}
+    \newcommand{\addsubheader}[1]{\begin{subheader}#1\vspace{-8pt}\end{subheader}}
 
 	% for bold callouts
 	\newenvironment{callout}{\color{darkgrey} \large}{}
@@ -122,66 +123,45 @@
 	\end{minipage}
 	
 	% add a closing rule
-	\vspace{0.5cm}
 	\noindent\rule{\textwidth}{0.4pt}
 	
 	% draw recent history if there is any
 	\ifdefempty{\@statement}{\relax}{%
-		\vspace{7mm}
-		\@statement\\
+		\@statement
 
 		% add a closing rule
 		\noindent\rule{\textwidth}{0.4pt}
 	}
-	\vspace{-1cm}
 }
 \makeatother
 
 % timeline
 \makeatletter
 
-	% start a timeline - fixes spacing before the timeline
-	\newcommand{\starttimeline}{\vspace{0.2cm}}
-	
-	% end a timeline - fix up spacing after a timeline
-	\newcommand{\stoptimeline}{\vspace{0.5cm}}
-	
-	% add a timeline bullet point
-	\newenvironment{timelinebullet}{\leftskip=12mm \parindent=-6mm $\bullet$ \hspace{2mm}}{\par\parindent=18pt}
-	\newcommand{\addtimelinebullet}[1]{\begin{timelinebullet}#1\end{timelinebullet}}
-	
 	% recent summary listing in the form of a timeline - takes 2 arguments
 	%   - First is the 'year' or date you want to apply
 	%   - Second is the comments against that date
 	\newcommand{\timelineitem}[2]{
-		\noindent
-		\begin{minipage}[t]{0.2\textwidth}
+		\begin{minipage}[t]{0.17\textwidth}
 			\vspace{0.2cm}
 			\begin{center}
-				\addtimelineheader{#1}\quad\color{verylightgrey}\leaders\vrule height 5pt depth -4pt \hfill\color{black} \null
+				\addtimelineheader{#1}\color{verylightgrey}\leaders\vrule height 5pt depth -4pt\hfill\color{black}\null
 			\end{center}
 		\end{minipage}
 		\hspace{-2mm}
-		\begin{minipage}[t]{0.8\textwidth}
+		\begin{minipage}[t]{0.83\textwidth}
+            \setlength{\parskip}{10pt}
+            \vspace{-6pt}
 			\begin{timelinebar}
-				\vspace{2mm}
 				#2
-				\vspace{4mm}
+				\vspace{20pt}
 			\end{timelinebar}
 		\end{minipage}
 		\vspace{-1cm}
 	}
-
-	% make a timeline space, between two timeline items to pad them out
-	\newcommand{\timelinespacer}{
-		\par\noindent\begin{minipage}{0.2\textwidth}\quad\end{minipage}
-		\hspace{-2mm}
-		\begin{minipage}{0.8\textwidth}\begin{timelinebar}
-			\vspace{1.5cm}\quad
-		\end{timelinebar}\end{minipage}\par
-		\vspace{-5mm}
-	}
 \makeatother
+
+\newcommand{\stoptimeline}{\vspace{1cm}}
 
 % hyperref package for links etc
 \usepackage{hyperref,color}
