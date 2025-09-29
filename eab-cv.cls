@@ -90,8 +90,8 @@
 	\newcommand{\addheadertext}[1]{\begin{sectionheader}#1\end{sectionheader}}
 	
 	% for sub headings
-    \newenvironment{subheader}{\color{darkgrey} \large}{\par}
-    \newcommand{\addsubheader}[1]{\begin{subheader}#1\vspace{-8pt}\end{subheader}}
+        \newenvironment{subheader}{\color{darkgrey} \large}{\par}
+        \newcommand{\addsubheader}[1]{\begin{subheader}#1\vspace{-2pt}\end{subheader}}
 
 	% for bold callouts
 	\newenvironment{callout}{\color{darkgrey} \large}{}
@@ -142,7 +142,7 @@
 	%   - Second is the comments against that date
 	\newcommand{\timelineitem}[2]{
 		\begin{minipage}[t]{0.17\textwidth}
-			\vspace{0.2cm}
+			\vspace{0.1cm}
 			\begin{center}
 				\addtimelineheader{#1}\color{verylightgrey}\leaders\vrule height 5pt depth -4pt\hfill\color{black}\null
 			\end{center}
@@ -150,10 +150,10 @@
 		\hspace{-2mm}
 		\begin{minipage}[t]{0.83\textwidth}
             \setlength{\parskip}{10pt}
-            \vspace{-6pt}
+            \vspace{6pt}
 			\begin{timelinebar}
 				#2
-				\vspace{20pt}
+				\vspace{28pt}
 			\end{timelinebar}
 		\end{minipage}
 		\vspace{-1cm}
